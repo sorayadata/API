@@ -56,4 +56,5 @@ WORKDIR /app
 EXPOSE 5000
 
 #Commande pour exécuter l'application Flask 
-CMD ["gunicorn", "-b", "0.0.0.0:5000", "app:app", "--workers=5"]
+CMD ["flask", "run", "--host=0.0.0.0", "--port=5000"]
+

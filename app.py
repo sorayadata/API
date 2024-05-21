@@ -23,7 +23,7 @@ model = pickle.load(open('model.pkl', 'rb'))
 # API welcome function
 @app.route("/")
 def welcome():
-    res = "Hello world! Welcome to the Default Predictor API!"
+    res = "Hello world! Welcome to the API!"
     return jsonify(res)
 
 # Function returning all client IDs
