@@ -23,7 +23,7 @@ model = pickle.load(open('model.pkl', 'rb'))
 # API welcome function
 @app.route("/")
 def welcome():
-    res = "Hello world! Welcome to the API!"
+    res = "Hello world! Welcome to the falask API!"
     return jsonify(res)
 
 # Function returning all client IDs
@@ -77,4 +77,5 @@ def predict_default():
     
 if __name__ == "__main__":     
     app.run(host='0.0.0.0')   
+    
                                         
