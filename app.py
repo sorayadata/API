@@ -1,6 +1,7 @@
 # Import packages
 import numpy as np
 #!/Users/soraya/Desktop/dernier/API/env/bin/python
+
 import pandas as pd
 from flask import Flask, jsonify, request
 import pickle
@@ -76,6 +77,6 @@ def predict_default():
     return jsonify(res)
     
 if __name__ == "__main__":     
-    app.run(host='0.0.0.0')   
+    app.run(host="127.0.0.1", port=5000)   
     
                                         
