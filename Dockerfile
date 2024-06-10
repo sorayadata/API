@@ -37,15 +37,8 @@ RUN pip install --no-cache-dir -r ./requirements.txt --user
 COPY . /app
 WORKDIR /app
 
-# Exécuter les tests unitaires
-RUN python -m unittest discover -s /app -p "test_unitaire_api.py"
-
-
 # Exposer le port sur lequel l'application Flask écoute
 EXPOSE 5000
 
 # Commande pour exécuter l'application Flask
 CMD ["gunicorn", "-b", "0.0.0.0:5000", "app:app", "--workers=5"]
-
-
-

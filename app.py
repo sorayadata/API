@@ -47,7 +47,7 @@ def load_client():
         AMT_CREDIT = client['AMT_CREDIT']
         AMT_ANNUITY = client['AMT_ANNUITY']
         
-        return jsonify(DAYS_BIRTH=float(DAYS_BIRTH), AMT_INCOME_TOTAL=float(AMT_INCOME_TOTAL), AMT_CREDIT=float(AMT_CREDIT), AMT_ANNUITY=float(AMT_ANNUITY))
+        return jsonify(DAYS_BIRTH=int(DAYS_BIRTH), AMT_INCOME_TOTAL=float(AMT_INCOME_TOTAL), AMT_CREDIT=float(AMT_CREDIT), AMT_ANNUITY=float(AMT_ANNUITY))
 
 
 # Function returning, for a given informaton, the values of all clients (age, annuity amount, credit amount, total income amount)

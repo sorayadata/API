@@ -4,7 +4,8 @@ import requests
 import json
 
 # Global variables definition
-api_url = "http://localhost:5000"
+api_url = "http://host.docker.internal:5000"
+
 n_clients = 1000
 
 # API tests
@@ -57,7 +58,7 @@ class TestDefaulPredictAPI(unittest.TestCase):
         self.assertEqual(client['AMT_ANNUITY'], 19908.0)
         self.assertEqual(client['AMT_CREDIT'], 252000.0)
         self.assertEqual(client['AMT_INCOME_TOTAL'], 315000.0 )
-        self.assertEqual(client['DAYS_BIRTH'], 29.85753424657534)
+        self.assertEqual(client['DAYS_BIRTH'], 29)
 
     # Test # 4
     def test_load_data(self):
@@ -93,8 +94,8 @@ class TestDefaulPredictAPI(unittest.TestCase):
 
         # Test # 5.2: the ptrediction is correct (Once the model re-compiled, test values have to be updated)
         prediction = response.json()
-        self.assertEqual(prediction['proba_0'], 0.0020642840568487753)
-        self.assertEqual(prediction['proba_1'], 0.9979357159431512)
+        self.assertEqual(prediction['proba_0'], 0.0022691398703050814)
+        self.assertEqual(prediction['proba_1'], 0.9977308601296949)
 
 if __name__ == '__main__':
     unittest.main()
