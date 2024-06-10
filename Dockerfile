@@ -5,6 +5,7 @@ FROM python:3.11-slim
 # Empêche l'exécution de commandes sudo
 RUN useradd -r -s /bin/bash sora
 
+
 # Définir l'environnement courant
 ENV HOME /app
 WORKDIR /app
