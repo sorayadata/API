@@ -37,6 +37,10 @@ RUN pip install --no-cache-dir -r ./requirements.txt --user
 COPY . /app
 WORKDIR /app
 
+# Exécuter les tests unitaires
+RUN python -m unittest discover -s /app -p "test_unitaire_api.py"
+
+
 # Exposer le port sur lequel l'application Flask écoute
 EXPOSE 5000
 
@@ -44,17 +48,4 @@ EXPOSE 5000
 CMD ["gunicorn", "-b", "0.0.0.0:5000", "app:app", "--workers=5"]
 
 
-#installe les dépendances
-ADD ./requirements.txt ./requirements.txt
-RUN pip install --no-cache-dir -r ./requirements.txt --user
-
-#copie le contenu du répertoire courant dans le conteneur
-# Add the rest of the files
-COPY . /app
-WORKDIR /app
-# Exposer le port sur lequel l'application Flask écoute
-EXPOSE 5000
-
-#Commande pour exécuter l'application Flask 
-CMD ["flask", "run", "--host=0.0.0.0", "--port=5000"]
 
