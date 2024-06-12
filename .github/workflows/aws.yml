@@ -83,6 +83,10 @@ jobs:
         task-definition: ${{ env.ECS_TASK_DEFINITION }}
         container-name: ${{ env.CONTAINER_NAME }}
         image: ${{ steps.build-image.outputs.image }}
+    - name: Run unit tests
+      run: |
+        # Run unit tests here
+        python -m unittest test_unitaire_api.py
 
     - name: Deploy Amazon ECS task definition
       uses: aws-actions/amazon-ecs-deploy-task-definition@v1
