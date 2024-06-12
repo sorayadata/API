@@ -4,7 +4,7 @@ import requests
 import json
 
 # Global variables definition
-api_url = "http://host.docker.internal:5000"
+api_url = "http://13.38.104.45:5000"
 
 n_clients = 1000
 
