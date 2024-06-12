@@ -24,7 +24,7 @@ model = pickle.load(open('model.pkl', 'rb'))
 # API welcome function
 @app.route("/")
 def welcome():
-    res = "Hello world! Welcome to the falask API!"
+    res = 'Hello world! Welcome to the falask API!'
     return jsonify(res)
 
 # Function returning all client IDs
